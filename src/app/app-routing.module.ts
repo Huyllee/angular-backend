@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './layouts/header/header.component';
 import { FooterComponent } from './layouts/footer/footer.component';
 import { DetailsPageComponent } from './User/details-page/details-page.component';
+import { CreateRegistrationComponent } from './Admin/create-registration/create-registration.component';
+import { RegistrationListComponent } from './Admin/registration-list/registration-list.component';
 
 const routes: Routes = [
-  { path: 'header', component: HeaderComponent },
-  { path: 'footer', component: FooterComponent },
-  { path: 'details', component: DetailsPageComponent }
+  { path: '', redirectTo: 'admin/register', pathMatch: 'full' },
+  { path: 'details', component: DetailsPageComponent },
+  //admin route
+  { path: 'admin/register', component: CreateRegistrationComponent },
+  { path: 'admin/list', component:  RegistrationListComponent }
 ];
 
 @NgModule({
